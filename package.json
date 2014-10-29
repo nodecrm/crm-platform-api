@@ -1,0 +1,41 @@
+{
+  "name": "crm-platform-api",
+  "version": "1.0.0",
+  "description": "crm-platform-api",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rtorino/crm-platform-api.git"
+  },
+  "keywords": [
+    "crm",
+    "rest"
+  ],
+  "author": "Raymond Torino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rtorino/crm-platform-api/issues"
+  },
+  "homepage": "https://github.com/rtorino/crm-platform-api",
+  "dependencies": {
+    "bcrypt": "^0.8.0",
+    "boom": "^2.6.0",
+    "halacious": "^2.0.3",
+    "hapi": "^7.1.1",
+    "hapi-sequelized": "^1.1.0",
+    "hoek": "^2.8.1",
+    "joi": "^4.7.0",
+    "pg": "^3.6.2",
+    "sequelize": "^2.0.0-rc2",
+    "sequelize-cli": "^0.3.3"
+  },
+  "devDependencies": {
+    "lab": "^5.0.1"
+  }
+}
