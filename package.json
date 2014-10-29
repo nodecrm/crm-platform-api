@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "make test-cov"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/rtorino/crm-platform-api",
   "dependencies": {
-    "bcrypt": "^0.8.0",
+    "bcryptjs": "^2.1.0",
     "boom": "^2.6.0",
     "halacious": "^2.0.3",
     "hapi": "^7.1.1",
@@ -36,6 +36,10 @@
     "sequelize-cli": "^0.3.3"
   },
   "devDependencies": {
+    "code": "^1.2.0",
+    "gulp": "^3.8.9",
+    "gulp-jshint": "^1.8.6",
+    "gulp-lab": "^1.0.2",
     "lab": "^5.0.1"
   }
 }
