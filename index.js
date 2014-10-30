@@ -1,4 +1,4 @@
 'use strict';
 
 require( './require-hack' );
-require( 'server' );
+require( 'server' ).start();

@@ -4,23 +4,25 @@
 var config = require( 'config' );
 
 // Load third party modules
-var fs        = require( 'fs' );
+var glob      = require( 'glob' );
 var path      = require( 'path' );
 var Sequelize = require( 'sequelize' );
 var Hoek      = require( 'hoek' );
 
-var db = { };
+var cwd = process.cwd();
+var db  = { };
 
 var sequelize = new Sequelize( config.db.database, config.db.username, config.db.password, {
 	'dialect' : config.db.dialect,
 	'port'    : config.db.port
 } );
 
+// Get all models
+var files = glob.sync( path.join( cwd, 'models' ) + '/*-model.js' );
+
 // Add all models in directory to the db object
-fs.readdirSync( __dirname ).filter( function ( file ) {
-	return ( file.indexOf( '.' ) !== 0 ) && ( file !== 'index.js' );
-} ).forEach( function ( file ) {
-	var model        = sequelize.import( path.join( __dirname, file ) );
+files.forEach( function ( file ) {
+	var model        = sequelize.import( file );
 	db[ model.name ] = model;
 } );
 

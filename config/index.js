@@ -23,6 +23,26 @@ var configs = {
 			'username' : 'postgres',
 			'password' : 'password'
 		}
+	},
+
+	'test' : {
+		'hashRounds' : 1,
+		'salt'       : 'ZE18QHA2dE1aKYGWfxIJTlfqxqo0CXBZrWVoYWj6o9UBN3fQ4yQcdhxDIJkaQzy',
+
+		'api' : {
+			'protocol' : 'http',
+			'host'     : 'localhost',
+			'port'     : 3000
+		},
+
+		'db' : {
+			'host'     : 'localhost',
+			'port'     : 5432,
+			'dialect'  : 'postgres',
+			'database' : 'platform',
+			'username' : 'postgres',
+			'password' : 'password'
+		}
 	}
 
 };

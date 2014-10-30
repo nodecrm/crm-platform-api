@@ -5,7 +5,7 @@ var lab    = require( 'gulp-lab' );
 gulp.task( 'test', function () {
 	return gulp.src( './test/**/*.js' )
 		.pipe( lab( {
-			'args' : '-v -C',
+			'args' : '-v -C -L',
 			'opts' : {
 				'emitLabError' : true
 			}

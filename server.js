@@ -26,13 +26,22 @@ for ( var route in routes ) {
 	server.route( routes[ route ] );
 }
 
-models.sequelize.sync().complete( function ( err ) {
-	if ( err ) {
-		throw err[ 0 ];
-	}
+// Start the server
+var start = function ( done ) {
+	models.sequelize.sync().complete( function ( err ) {
+		if ( err ) {
+			throw err[ 0 ];
+		}
 
-	// Start the server
-	server.start( function () {
-		console.log( 'Server running at: ' + server.info.uri );
+		// Start the server
+		server.start( function () {
+			console.log( 'Server running at: ' + server.info.uri );
+
+			if ( typeof done === 'function'  ) {
+				done();
+			}
+		} );
 	} );
-} );
+};
+
+module.exports.start = start;

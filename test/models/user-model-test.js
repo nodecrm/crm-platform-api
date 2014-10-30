@@ -8,12 +8,19 @@ var before   = lab.before;
 var after    = lab.after;
 var expect   = Code.expect;
 
+var User = require( '../../models' ).User;
+
 describe( 'User model', function () {
 
-	describe( 'attributes', function () {
+	it( 'has attributes', function ( done ) {
+		expect( User.attributes ).to.exist();
+		done();
+	} );
 
-		it( 'has an id which is of data type UUID', function ( done ) {
-			expect( 1 + 1 ).to.be.equal( 2 );
+	describe( 'User model attributes', function () {
+
+		it( 'is an object', function ( done ) {
+			expect( User.attributes ).to.be.an.object();
 			done();
 		} );
 
