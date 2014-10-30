@@ -13,9 +13,9 @@ module.exports = [
 					'attributes' : [ 'id', 'name' ]
 				};
 
-				User.findAll( options ).success( function ( users ) {
+				User.findAll( options ).then( function ( users ) {
 					reply( users );
-				} ).error( function ( err ) {
+				} ).catch( function ( err ) {
 					reply( err );
 				} );
 			}

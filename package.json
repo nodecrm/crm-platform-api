@@ -29,10 +29,8 @@
     "glob": "^4.0.6",
     "halacious": "^2.0.3",
     "hapi": "^7.1.1",
-    "hapi-sequelized": "^1.1.0",
     "hoek": "^2.8.1",
     "joi": "^4.7.0",
-    "pg": "^3.6.2",
     "sequelize": "^2.0.0-rc2",
     "sequelize-cli": "^0.3.3"
   },

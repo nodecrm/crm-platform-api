@@ -7,9 +7,6 @@ if ( !module.parent ) {
 // Load config file
 var config = require( 'config' );
 
-// Load models
-var models = require( 'models' );
-
 // Load routes
 var routes = require( 'routes' );
 
@@ -28,19 +25,13 @@ for ( var route in routes ) {
 
 // Start the server
 var start = function ( done ) {
-	models.sequelize.sync().complete( function ( err ) {
-		if ( err ) {
-			throw err[ 0 ];
+	// Start the server
+	server.start( function () {
+		console.log( 'Server running at: ' + server.info.uri );
+
+		if ( typeof done === 'function'  ) {
+			done();
 		}
-
-		// Start the server
-		server.start( function () {
-			console.log( 'Server running at: ' + server.info.uri );
-
-			if ( typeof done === 'function'  ) {
-				done();
-			}
-		} );
 	} );
 };
 
